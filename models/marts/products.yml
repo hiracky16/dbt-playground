@@ -24,3 +24,7 @@ semantic_models:
         type: categorical
       - name: product_price
         type: categorical
+version: 2
+models:
+  - name: products
+    columns: []

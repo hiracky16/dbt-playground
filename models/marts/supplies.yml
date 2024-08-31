@@ -22,3 +22,7 @@ semantic_models:
         type: categorical
       - name: is_perishable_supply
         type: categorical
+version: 2
+models:
+  - name: supplies
+    columns: []

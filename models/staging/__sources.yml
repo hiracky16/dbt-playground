@@ -11,14 +11,98 @@ sources:
     tables:
       - name: raw_customers
         description: One record per person who has purchased one or more items
+        columns:
+          - name: id
+            description: ''
+            data_type: VARCHAR
+          - name: name
+            description: ''
+            data_type: VARCHAR
       - name: raw_orders
         description: One record per order (consisting of one or more order items)
         loaded_at_field: ordered_at
+        columns:
+          - name: id
+            description: ''
+            data_type: VARCHAR
+          - name: customer
+            description: ''
+            data_type: VARCHAR
+          - name: ordered_at
+            description: ''
+            data_type: TIMESTAMP
+          - name: store_id
+            description: ''
+            data_type: VARCHAR
+          - name: subtotal
+            description: ''
+            data_type: INTEGER
+          - name: tax_paid
+            description: ''
+            data_type: INTEGER
+          - name: order_total
+            description: ''
+            data_type: INTEGER
       - name: raw_items
         description: Items included in an order
+        columns:
+          - name: id
+            description: ''
+            data_type: VARCHAR
+          - name: order_id
+            description: ''
+            data_type: VARCHAR
+          - name: sku
+            description: ''
+            data_type: VARCHAR
       - name: raw_stores
         loaded_at_field: opened_at
+        columns:
+          - name: id
+            description: ''
+            data_type: VARCHAR
+          - name: name
+            description: ''
+            data_type: VARCHAR
+          - name: opened_at
+            description: ''
+            data_type: TIMESTAMP
+          - name: tax_rate
+            description: ''
+            data_type: DOUBLE
       - name: raw_products
         description: One record per SKU for items sold in stores
+        columns:
+          - name: sku
+            description: ''
+            data_type: VARCHAR
+          - name: name
+            description: ''
+            data_type: VARCHAR
+          - name: type
+            description: ''
+            data_type: VARCHAR
+          - name: price
+            description: ''
+            data_type: INTEGER
+          - name: description
+            description: ''
+            data_type: VARCHAR
       - name: raw_supplies
         description: One record per supply per SKU of items sold in stores
+        columns:
+          - name: id
+            description: ''
+            data_type: VARCHAR
+          - name: name
+            description: ''
+            data_type: VARCHAR
+          - name: cost
+            description: ''
+            data_type: INTEGER
+          - name: perishable
+            description: ''
+            data_type: BOOLEAN
+          - name: sku
+            description: ''
+            data_type: VARCHAR

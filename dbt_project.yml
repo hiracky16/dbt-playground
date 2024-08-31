@@ -27,6 +27,7 @@ seeds:
 
 models:
   jaffle_shop:
+    +dbt-osmosis: "{model}.yml"
     staging:
       +materialized: view
     marts:
