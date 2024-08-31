@@ -1,0 +1,25 @@
+services:
+  dbt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - DBT_PROJECT_DIR=/dbt
+      - DBT_PROFILE_DIR=/dbt
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./analyses:/dbt/analyses
+      - ./jaffle-data:/dbt/jaffle-data
+      - ./macros:/dbt/macros
+      - ./models:/dbt/models
+      - ./seeds:/dbt/seeds
+      - ./target:/dbt/target
+      - ./dbt_project.yml:/dbt/dbt_project.yml
+      - ./package.yml:/dbt/package.yml
+      - ./requirements.txt:/dbt/requiments.txt
+      - ./profiles.yml:/dbt/profiles.yml
+      - duckdb:/duckdb
+
+volumes:
+  duckdb:
